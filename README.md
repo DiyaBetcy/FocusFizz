@@ -44,8 +44,8 @@ Open index.html in your preferred web browser to launch the application.
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+(https://github.com/user-attachments/assets/6d3a4012-60f6-43df-bea8-bb483beac3a6)
+Home Page which contains
 
 ![Screenshot2](Add screenshot 2 here with proper name)
 *Add caption explaining what this shows*
