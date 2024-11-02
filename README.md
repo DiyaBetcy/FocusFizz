@@ -45,17 +45,55 @@ For Software:
 
 # Screenshots (Add at least 3)
 (https://github.com/user-attachments/assets/6d3a4012-60f6-43df-bea8-bb483beac3a6)
-Home Page which contains
+FocusFizz Home Page
+https://github.com/user-attachments/assets/d5665ce9-b4ba-4d4c-b76d-b8e3b577d171
+The FocusFizz home page is an interactive hub designed for quick distractions. Buttons guide users to various fun activities:
+Game on: Quick, engaging games for a burst of entertainment.
+Mallu Laugh: Access to light-hearted comics for a quick read.
+Mood Beats: Curated playlists that match your mood.
+Doodle Dash: A drawing tool for spontaneous doodling.
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+https://github.com/user-attachments/assets/d27cc064-d8bc-4d87-a029-93fa8630482e)
+List of games
+
+https://github.com/user-attachments/assets/395e0a31-5a4f-4caa-bdaa-138727b844d1
+By choosing mood, it will redirect to the playlists.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+Home Page:
+
+Displays four main buttons:
+Games On
+Mood Beats
+DoodleDash
+Mallu Laughs
+Button Workflows:
+
+Games On:
+
+Click redirects to a game selection page.
+Shows a list of six mini-games:
+Fried Pikachu
+Random Number Guess
+xox
+Shuffle Number
+Sudoku
+Amban's Zone
+Each game button leads to the corresponding game.
+Mood Beats:
+
+Click opens a page with emoji options.
+User selects an emoji representing their current mood.
+Redirects to a curated music playlist based on the selected mood.
+DoodleDash:
+
+Click opens a drawing canvas.
+Users can draw
+Mallu Laughs:
+
+Click redirects to a page with Malayalam comic books.
+Allows for a quick, humor-filled reading break.
 
 ## Team Contributions
 - Diya Betcy:Project concept, coding, content creation and UI/UX design.
