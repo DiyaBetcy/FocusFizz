@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Music Redirect</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 36px;
+        }
+        .mood-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .mood-icon {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #34495e;
+            border-radius: 10%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .mood-icon:hover {
+            transform: scale(1.1);
+            background-color: #1abc9c;
+        }
+        .mood-icon img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Mood</h1>
+    <div class="mood-container">
+        <div class="mood-icon" onclick="window.location.href='https://open.spotify.com/playlist/3LuUfJPLVA53xuRubi262M?si=ATf9PW5eR8SoNQLlvg8E9w&pi=mG0HBjtHRyC0-://example.com/happy'">
+            <img src="happy.png" alt="Happy">
+        </div>
+        <div class="mood-icon" onclick="window.location.href='https://open.spotify.com/playlist/4DBKi4I9pyydqhSOMD4qrt?si=CtJDYtTYRGyq3JkLmjYkXg&pi=V_7JzWB3TbC4Oe.comhttps://open.spotify.com/playlist/5JgrCNuRqcIgXfiN3JTclm?si=J3FiVnIcSAW9YkUt8X6eqg/sad'">
+            <img src="sad.png" alt="Sad">
+        </div>
+        <div class="mood-icon" onclick="window.location.href='https://open.spotify.com/playlist/37i9dQZF1DWVBB5D9kpEQ9?si=ynAtL6y7S9-3Qbr8qZuZGg&pi=DdrRqvvgTZKDBexample.com/energetic'">
+            <img src="energy.png" alt="Energetic">
+        </div>
+        <div class="mood-icon" onclick="window.location.href='https://open.spotify.com/playlist/5JgrCNuRqcIgXfiN3JTclm?si=J3FiVnIcSAW9YkUt8X6eqg&nd=1&dlsi=018165ab2cb24ba6https://open.spotify.com/playlist/3LuUfJPLVA53xuRubi262M?si=ATf9PW5eR8SoNQLlvg8E9w&pi=mG0HBjtHRyC0-https://open.spotify.com/playlist/37i9dQZF1DWVBB5D9kpEQ9?si=ynAtL6y7S9-3Qbr8qZuZGg&pi=DdrRqvvgTZKDB.com/calm'">
+            <img src="calm.png" alt="Calm">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Guess the Number</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #4682b4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        input[type="number"] {
+            padding: 5px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #4682b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #365f8c;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number</h1>
+    <div class="container">
+        <p>I'm thinking of a number between 1 and 100. Can you guess what it is?</p>
+        <input type="number" id="guess" min="1" max="100" placeholder="Enter your guess" />
+        <input type="button" value="Guess" onclick="checkGuess()" />
+        <div class="message" id="message"></div>
+        <a href="games.html" class="back-button">Back</a>
+    </div>
+
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            let guess = document.getElementById('guess').value;
+            attempts++;
+            let message = '';
+
+            if (guess == secretNumber) {
+                message = 'Congratulations! You guessed the right number in ' + attempts + ' attempts.';
+                resetGame();
+            } else if (guess > secretNumber) {
+                window.location.href = 'fail.html';
+                
+            } else if (guess < secretNumber) {
+                window.location.href = 'fail1.html';
+            }
+
+            document.getElementById('message').textContent = message;
+        }
+
+        function resetGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById('guess').value = '';
+            document.getElementById('message').textContent = '';
+        }
+    </script>
+</body>
+</html>

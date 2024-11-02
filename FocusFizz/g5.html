@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Amban's World</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+    }
+
+.container {
+    text-align: center;
+}
+
+.cat-button {
+    background-color: #ffcc00;
+    border: none;
+    color: white;
+    padding: 50px 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 5px #999;
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-button::before {
+    content: '🐱';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cat-button:hover {
+    background-color: #ff9900;
+}
+
+.cat-button:active {
+    background-color: #ff9900;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+h1.cat-header { font-family: 'Comic Sans MS', cursive, sans-serif; color: #ff4500;
+    text-shadow: 2px 2px #ffa500; 
+    text-align: top;
+    font-size: 60px;
+    background-color: #f0e68c;
+    padding: 100px; 
+    border-radius: 10px;
+    border: 2px solid #d2691e;
+}
+.popup img {
+    max-width: 100%;
+    height: auto;
+}
+#h1{
+    height: 40;
+}
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="cat-header">Amban's Zone</h1>
+        <button class="cat-button" onclick="showPopup('popup')">Eat with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup1')">Clap with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup2')">Work with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup3')">Sleep with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup4')">Dance with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup5')">Cook with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup6')">Cry with Amban</button>
+        <button class="cat-button" onclick="showPopup('popup7')">Vibe with Amban</button>
+        <a href="games.html" class="back-button">Back</a>
+    </div>
+    <div class="popup" id="popup">
+        <img src="cateat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup1">
+        <img src="happyc.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup2">
+        <img src="lapcat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup3">
+        <img src="sleepycat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup4">
+        <img src="dancingcat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup5">
+        <img src="cookingcat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup6">
+        <img src="cryingcat.gif" alt="A fun GIF">
+    </div>
+    <div class="popup" id="popup7">
+        <img src="vibingcat.gif" alt="A fun GIF">
+    </div>
+
+    <script>
+        function showPopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000); // Close the popup after 3 seconds
+        }
+    </script>
+</body>
+</html>

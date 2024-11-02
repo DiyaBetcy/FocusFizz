@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sudoku Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #sudoku {
+            display: grid;
+            grid-template-columns: repeat(9, 40px);
+            gap: 2px;
+        }
+        input {
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+        }
+        input:focus {
+            outline: none;
+            border: 2px solid #007BFF;
+        }
+        .highlight {
+            background-color: #ffe0b2;
+        }
+    </style>
+</head>
+<body>
+    <div id="sudoku"></div>
+    <div class="container">
+        <a href="games.html" class="back-button">Back</a>
+    </div>
+    <script>
+        const sudokuBoard = [
+            [5, 3, null, null, 7, null, null, null, null],
+            [6, null, null, 1, 9, 5, null, null, null],
+            [null, 9, 8, null, null, null, null, 6, null],
+            [8, null, null, null, 6, null, null, null, 3],
+            [4, null, null, 8, null, 3, null, null, 1],
+            [7, null, null, null, 2, null, null, null, 6],
+            [null, 6, null, null, null, null, 2, 8, null],
+            [null, null, null, 4, 1, 9, null, null, 5],
+            [null, null, null, null, 8, null, null, 7, 9]
+        ];
+
+        function createBoard() {
+            const sudokuElement = document.getElementById('sudoku');
+            sudokuBoard.forEach(row => {
+                row.forEach(cell => {
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.min = '1';
+                    input.max = '9';
+                    input.value = cell !== null ? cell : '';
+                    input.disabled = cell !== null;
+                    sudokuElement.appendChild(input);
+                });
+            });
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>

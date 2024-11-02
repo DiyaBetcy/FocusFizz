@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sliding Puzzle Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .puzzle-container {
+            width: 400px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2px;
+        }
+        .tile {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4682b4;
+            color: #fff;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .empty {
+            background-color: #f0f0f0;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-container" id="puzzle"></div>
+
+    <div class="container">
+        <a href="games.html" class="back-button">Back</a>
+    </div>
+
+
+    <script>
+        const puzzleContainer = document.getElementById('puzzle');
+        const size = 4;
+        let tiles = [...Array(size * size).keys()];
+
+        function renderPuzzle() {
+            puzzleContainer.innerHTML = '';
+            tiles.forEach((tile, index) => {
+                const tileElement = document.createElement('div');
+                tileElement.classList.add('tile');
+                if (tile === 0) {
+                    tileElement.classList.add('empty');
+                } else {
+                    tileElement.textContent = tile;
+                }
+                tileElement.addEventListener('click', () => moveTile(index));
+                puzzleContainer.appendChild(tileElement);
+            });
+        }
+
+        function moveTile(index) {
+            const emptyIndex = tiles.indexOf(0);
+            const validMoves = [
+                emptyIndex - 1,
+                emptyIndex + 1,
+                emptyIndex - size,
+                emptyIndex + size
+            ];
+            if (validMoves.includes(index)) {
+                [tiles[emptyIndex], tiles[index]] = [tiles[index], tiles[emptyIndex]];
+                renderPuzzle();
+            }
+        }
+
+        function shufflePuzzle() {
+            for (let i = tiles.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+            }
+        }
+
+        shufflePuzzle();
+        renderPuzzle();
+    </script>
+</body>
+</html>

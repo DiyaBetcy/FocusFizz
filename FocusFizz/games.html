@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game Selection</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://plus.unsplash.com/premium_photo-1677870728119-52aef052d7ef?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtaW5nJTIwcm9vbXxlbnwwfHwwfHx8MA%3D%3D'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #ffeb3b;
+        }
+
+        .game-button {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 10px auto;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            color: #222;
+            background: #ffeb3b;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .game-button:hover {
+            background: #ffca28;
+            transform: scale(1.05);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Select Your Game</h1>
+        <button class="game-button" onclick="location.href='g3.html'">Fried Pikachu</button>
+        <button class="game-button" onclick="location.href='g2.html'">Random Number Guess</button>
+        <button class="game-button" onclick="location.href='g1.html'">XOX</button>
+        <button class="game-button" onclick="location.href='g4.html'">Shuffle Number</button>
+        <button class="game-button" onclick="location.href='g6.html'">Sudoku</button>
+        <button class="game-button" onclick="location.href='g5.html'">Amban's Zone</button>
+        <a href="index.html" class="back-button">Back</a>
+    </div>
+</body>
+</html>

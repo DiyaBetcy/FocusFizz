@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Canvas</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        
+        h1 {
+            color: #0a050a;
+            font-size: 2rem; 
+            text-shadow: 1px 1px 2px rgba(24, 167, 60, 0.2); 
+            margin-bottom: 20px; 
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        canvas {
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #pict {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #randomPicture {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+        .controls1, #changePicture {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            color: #fff;
+        }
+
+        #changePicture {
+            background-color: #007bff;
+        }
+
+        #increasePencil {
+            background-color: #28a745; 
+        }
+
+        #decreasePencil {
+            background-color: #ff5722;
+        }
+
+        #increaseEraser {
+            background-color: #28a745; 
+        }
+
+        #decreaseEraser {
+            background-color: #ff5722;
+        }
+
+        #redColor {
+            background-color: #ff3d3d;
+        }
+
+        #blueColor {
+            background-color: #3d8bff;
+        }
+
+        #greenColor {
+            background-color: #37b24d;
+        }
+
+        #blackColor {
+            background-color: #333333;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .back-button {
+            display: block;
+            padding: 15px 30px;
+            margin-left: 0px;
+            margin-top: 500px;
+            max-width: 100px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #c70f0f;
+            border: 2px solid #555;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #ffca28;
+            transform: scale(1.05);
+        }
+
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>ART IN ACTION!</h1>
+    <div class="container">
+        <div id="pict">
+            <img id="randomPicture" alt="Random Image" width="300">
+            <button id="changePicture">Change Picture</button>
+        </div>
+        <a href="index.html" class="back-button">Back</a>
+        <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    </div>
+    <div class="controls1">
+        <button id="increasePencil">Increase Pencil Size</button>
+        <button id="decreasePencil">Decrease Pencil Size</button>
+        <button id="increaseEraser">Increase Eraser Size</button>
+        <button id="decreaseEraser">Decrease Eraser Size</button>
+        <button id="redColor">Red</button>
+        <button id="blueColor">Blue</button>
+        <button id="greenColor">Green</button>
+        <button id="blackColor">Black</button>
+    </div>
+
+    <script>
+        const images = [
+            'd1.jpeg', // Replace these with your own image URLs
+            'd2.jpeg',
+            'd3.jpeg',
+            'd4.jpeg',
+            'd5.jpeg',
+            'd6.jpeg',
+            'd7.jpeg',
+            'd8.jpeg',
+            'd9.jpeg'
+        ];
+
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        const randomPicture = document.getElementById('randomPicture');
+        let drawing = false;
+        let pencilSize = 5;
+        let pencilColor = 'black';
+
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        function loadRandomImage() {
+            const randomImage = getRandomImage();
+            randomPicture.src = randomImage;
+        }
+
+        document.getElementById('changePicture').addEventListener('click', loadRandomImage);
+
+        canvas.addEventListener('mousedown', () => {
+            drawing = true;
+            ctx.beginPath();
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            drawing = false;
+        });
+
+        canvas.addEventListener('mousemove', (event) => {
+            if (drawing) {
+                ctx.lineWidth = pencilSize;
+                ctx.strokeStyle = pencilColor;
+                ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+                ctx.stroke();
+            }
+        });
+
+        document.getElementById('increasePencil').addEventListener('click', () => {
+            pencilSize += 2;
+        });
+
+        document.getElementById('decreasePencil').addEventListener('click', () => {
+            if (pencilSize > 2) {
+                pencilSize -= 2;
+            }
+        });
+
+        document.getElementById('increaseEraser').addEventListener('click', () => {
+            pencilSize += 2;
+            pencilColor = 'white'; // Assuming the canvas background is white
+        });
+
+        document.getElementById('decreaseEraser').addEventListener('click', () => {
+            if (pencilSize > 2) {
+                pencilSize -= 2;
+            }
+            pencilColor = 'white'; // Assuming the canvas background is white
+        });
+
+        document.getElementById('redColor').addEventListener('click', () => {
+            pencilColor = 'red';
+        });
+
+        document.getElementById('blueColor').addEventListener('click', () => {
+            pencilColor = 'blue';
+        });
+
+        document.getElementById('greenColor').addEventListener('click', () => {
+            pencilColor = 'green';
+        });
+
+        document.getElementById('blackColor').addEventListener('click', () => {
+            pencilColor = 'black';
+        });
+
+        // Load a random image on page load
+        window.onload = loadRandomImage;
+    </script>
+</body>
+</html>

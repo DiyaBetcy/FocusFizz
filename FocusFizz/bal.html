@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old World Comics</title>
+    <style>
+        /* Reset and Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Container Style */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        /* Header Style */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        /* Button Style */
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            background: #3498db;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s ease-in-out;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #2980b9;
+            transform: translateY(-4px);
+        }
+
+        button:active {
+            transform: translateY(2px);
+        }
+
+        /* Custom Button Colors */
+        .comics-btn {
+            background-color: #f39c12;
+        }
+
+        .comics-btn:hover {
+            background-color: #e67e22;
+        }
+
+        .back-btn {
+            background-color: #e74c3c;
+        }
+
+        .back-btn:hover {
+            background-color: #c0392b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Old World Comics</h1>
+        <p>Step into the world of your favorite childhood comics! Click below to rediscover the magic of timeless tales.</p>
+        
+        <div class="button-container">
+            <button class="comics-btn" onclick="openComics()">Open Comics</button>
+            <button class="back-btn" onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <script>
+        function openComics() {
+            window.open('https://emagazine.manoramaonline.com/Balarama?eid=18&edate=02/11/2024&pgid=74234&device=mobile&view=0&sedId=0&uemail=', '_blank');
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

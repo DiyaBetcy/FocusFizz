@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFizz: Your Break Buddy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1>FocusFizz</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#get-started">Get Started</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Boost Your Focus, One Fun Break at a Time!</h2>
+        <p>Discover quirky breaks and interactive challenges that refresh your mind while you work.</p>\
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h3>About FocusFizz</h3>
+        <p>FocusFizz is your personalized companion designed to improve productivity by making breaks engaging and refreshing. Instead of mundane timers, FocusFizz offers fun prompts that help you unwind and refocus without feeling distracted!</p>
+    </section>
+
+    <!-- Interactive Breaks Section -->
+    <section id="interactive-breaks">
+        <h3>Choose Your Break!</h3>
+        <div class="button-grid">
+            <button onclick="playGame()">🎮 Game On!</button>
+            <button onclick="launchMusicMood()">🎶 Mood Beats</button>
+            <button onclick="openCanvas()">🎨 Doodle Dash</button>
+            <button onclick="readComic()">📚 Mallu Laughs</button>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="get-started" class="cta">
+        <h3>Ready to Refresh Your Productivity?</h3>
+        <p>Click below to experience FocusFizz and make playful!</p>
+    </section>
+
+    <script>
+        function playGame() {
+            window.location.href = 'games.html';
+        }
+
+        function launchMusicMood() {
+            window.location.href = 'spo.html';
+        }
+
+        function openCanvas() {
+            window.location.href = 'can.html';
+        }
+
+        function readComic() {
+            window.location.href = 'bal.html';
+        }
+    </script>
+
+</body>
+</html>
