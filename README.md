@@ -46,13 +46,13 @@ For Software:
 # Screenshots (Add at least 3)
 (https://github.com/user-attachments/assets/6d3a4012-60f6-43df-bea8-bb483beac3a6)
 FocusFizz Home Page
+
 https://github.com/user-attachments/assets/d5665ce9-b4ba-4d4c-b76d-b8e3b577d171
 The FocusFizz home page is an interactive hub designed for quick distractions. Buttons guide users to various fun activities:
 Game on: Quick, engaging games for a burst of entertainment.
 Mallu Laugh: Access to light-hearted comics for a quick read.
 Mood Beats: Curated playlists that match your mood.
 Doodle Dash: A drawing tool for spontaneous doodling.
-
 
 https://github.com/user-attachments/assets/d27cc064-d8bc-4d87-a029-93fa8630482e)
 List of games
